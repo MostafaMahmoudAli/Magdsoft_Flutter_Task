@@ -5,10 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:magdsoft_flutter_task/presentation/router/app_router.dart';
+import 'package:magdsoft_flutter_task/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_task/presentation/widgets/toast.dart';
 import 'package:sizer/sizer.dart';
 import 'package:intl/intl.dart';
-
 import 'business_logic/bloc_observer.dart';
 import 'business_logic/global_cubit/global_cubit.dart';
 import 'data/data_providers/local/cache_helper.dart';
@@ -94,12 +94,19 @@ class _MyAppState extends State<MyApp> {
                     supportedLocales: delegate.supportedLocales,
                     onGenerateRoute: widget.appRouter.onGenerateRoute,
                     theme: ThemeData(
+                      textTheme: TextTheme(
+                        displayLarge: TextStyle(
+                          fontSize: 30.sp,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                        )
+                      ),
                       fontFamily: 'cairo',
-                      //scaffoldBackgroundColor: AppColors.white,
+                      scaffoldBackgroundColor: AppColors.white,
                       appBarTheme: const AppBarTheme(
                         elevation: 0.0,
                         systemOverlayStyle: SystemUiOverlayStyle(
-                          //statusBarColor: AppColors.transparent,
+                          statusBarColor:AppColors.transparent,
                           statusBarIconBrightness: Brightness.dark,
                         ),
                       ),

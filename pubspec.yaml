@@ -35,10 +35,7 @@ dependencies:
   shared_preferences: ^2.2.0
   bloc: ^8.1.2
   flutter_bloc: ^8.1.3
-  intl_phone_field: ^3.2.0
-  get_it: ^7.6.0
-  dartz: ^0.10.1
-  flutter_screenutil: ^5.8.4
+  pin_code_fields: ^8.0.1
   flutter_svg_provider: ^1.0.3
   sizer: ^2.0.15
   flutter_localizations:
@@ -72,8 +69,6 @@ flutter:
   assets:
     - assets/images/
     - assets/i18n/
-
-  # example:
 
     - family: cairo
       fonts:
