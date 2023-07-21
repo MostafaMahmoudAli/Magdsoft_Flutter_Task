@@ -99,7 +99,17 @@ class _MyAppState extends State<MyApp> {
                           fontSize: 30.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
-                        )
+                        ),
+                        displayMedium:TextStyle(
+                          fontSize: 20.sp,
+                          color:AppColors.primary,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        displaySmall:TextStyle(
+                          fontSize: 10.sp,
+                          color:AppColors.grey,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                       fontFamily: 'cairo',
                       scaffoldBackgroundColor: AppColors.white,
