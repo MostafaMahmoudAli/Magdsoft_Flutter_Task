@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:magdsoft_flutter_task/presentation/router/app_router.dart';
+import 'package:magdsoft_flutter_task/presentation/screens/user/help_screen.dart';
+import 'package:magdsoft_flutter_task/presentation/screens/user/home_layout.dart';
 import 'package:magdsoft_flutter_task/presentation/styles/colors.dart';
 import 'package:magdsoft_flutter_task/presentation/widgets/toast.dart';
 import 'package:sizer/sizer.dart';
@@ -23,7 +25,7 @@ Future<void> main() async {
   DioHelper.init();
   await CacheHelper.init();
   final locale =
-      CacheHelper.getDataFromSharedPreference(key: 'language') ?? "ar";
+      CacheHelper.getDataFromSharedPreference(key: 'language') ?? "en";
   delegate = await LocalizationDelegate.create(
     fallbackLocale: locale,
     supportedLocales: ['ar', 'en'],
@@ -92,7 +94,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                     locale: delegate.currentLocale,
                     supportedLocales: delegate.supportedLocales,
-                    onGenerateRoute: widget.appRouter.onGenerateRoute,
+                    // onGenerateRoute: widget.appRouter.onGenerateRoute,
                     theme: ThemeData(
                       textTheme: TextTheme(
                         displayLarge: TextStyle(
@@ -105,14 +107,24 @@ class _MyAppState extends State<MyApp> {
                           color:AppColors.primary,
                           fontWeight: FontWeight.w400,
                         ),
+                        bodySmall: TextStyle(
+                          fontSize: 12.sp,
+                          color:AppColors.primary,
+                          fontWeight: FontWeight.w400,
+                        ),
                         displaySmall:TextStyle(
                           fontSize: 10.sp,
                           color:AppColors.grey,
                           fontWeight: FontWeight.w400,
                         ),
+                        titleLarge:TextStyle(
+                            color:AppColors.white,
+                            fontSize:30.sp,
+                            fontWeight:FontWeight.w300
+                        ),
                       ),
                       fontFamily: 'cairo',
-                      scaffoldBackgroundColor: AppColors.white,
+                      // scaffoldBackgroundColor: AppColors.white,
                       appBarTheme: const AppBarTheme(
                         elevation: 0.0,
                         systemOverlayStyle: SystemUiOverlayStyle(
@@ -121,6 +133,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
+                    home:HelpScreen(),
                   );
                 }),
               );

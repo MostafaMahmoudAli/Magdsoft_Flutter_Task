@@ -1,6 +1,14 @@
 class LoginRequest
 {
-  final String?name;
-  final String?phone;
-  LoginRequest(this.name, this.phone,);
+   String?name;
+   String?phone;
+  LoginRequest({
+    required this.name,
+    required this.phone,
+  });
+  Map<String,dynamic>toMap()=>
+      {
+        "name":name,
+        "phone":phone,
+      };
 }
