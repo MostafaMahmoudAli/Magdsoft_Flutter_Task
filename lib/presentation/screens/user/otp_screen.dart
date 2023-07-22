@@ -29,12 +29,7 @@ class OtpScreen extends StatelessWidget {
                     children: [
                       Text(
                         otpTitle,
-                        style:Theme.of(context).textTheme.titleLarge!.copyWith(
-                          color:AppColors.white,
-                          fontSize:30.sp,
-                          fontWeight:FontWeight.w300
-                        ),
-
+                        style:Theme.of(context).textTheme.titleLarge,
                       ),
                       SizedBox(height:MediaQuery.sizeOf(context).height*0.12,),
                       CustomPinCodeFieldView(context:context),
